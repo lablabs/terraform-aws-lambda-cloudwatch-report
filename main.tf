@@ -41,7 +41,8 @@ resource "aws_iam_policy" "this" {
      },
      {
       "Action": [
-        "ses:SendRawEmail"
+        "ses:SendRawEmail",
+        "cloudwatch:GetMetricData"
       ],
       "Resource": "*",
       "Effect": "Allow"
