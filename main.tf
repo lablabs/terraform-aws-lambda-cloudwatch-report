@@ -109,3 +109,7 @@ resource "aws_lambda_permission" "this" {
 resource "aws_ses_email_identity" "this" {
   email = var.email_source_address
 }
+
+resource "aws_ses_email_identity" "target" {
+  email = var.email_target_address
+}
