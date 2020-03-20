@@ -1,5 +1,5 @@
 variable "lambda_schedule" {
-  default = "cron(* 1 * * ? *)"
+  default = "cron(0 0 * * ? *)"
 }
 variable "region" {}
 variable "cw_metric_name" {}
