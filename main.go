@@ -153,7 +153,7 @@ func sendEmail(attachement []byte) {
 	input, err := buildEmailInput(
 		emailSource,
 		emailTarget,
-		"Healhcheck report for "+metricDimension,
+		"Healthcheck report for "+metricDimension,
 		"Report for "+metricDimension+" is attached to this message\n"+"from "+startTime.Format("2006-01-02T15:04:05")+"\n"+"to  "+endTime.Format("2006-01-02T15:04:05")+"\n",
 		attachement,
 	)
