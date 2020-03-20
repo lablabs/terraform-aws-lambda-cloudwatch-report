@@ -105,3 +105,7 @@ resource "aws_lambda_permission" "this" {
   principal     = "events.amazonaws.com"
   source_arn    = aws_cloudwatch_event_rule.trigger.arn
 }
+
+resource "aws_ses_email_identity" "this" {
+  email = var.email_source_address
+}
