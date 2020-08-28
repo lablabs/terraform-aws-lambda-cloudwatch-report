@@ -52,6 +52,7 @@ func (status *statusData) MarshalCSV() (string, error) {
 type sample struct {
 	Time  timeData   `csv:"timestamp"`
 	Value statusData `csv:"status_code"`
+	Url   string     `csv:"url"`
 }
 
 func handleRequest(ctx context.Context, req request) (string, error) {
@@ -212,8 +213,9 @@ func getMetricData() []byte {
 	var samples []*sample
 
 	for i, timestamp := range result.MetricDataResults[0].Timestamps {
-		samples = append([]*sample{&sample{Time: timeData{*timestamp}, Value: statusData{*result.MetricDataResults[0].Values[i]}}}, samples...)
+		samples = append([]*sample{&sample{Time: timeData{*timestamp}, Value: statusData{*result.MetricDataResults[0].Values[i]}, Url: metricDimension}}, samples...)
 	}
+
 	csvContent, err := gocsv.MarshalBytes(&samples)
 	if err != nil {
 		panic(err)
