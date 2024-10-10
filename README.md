@@ -16,25 +16,46 @@ A terraform module to deploy a CloudWatch report lambda function and to provide 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [aws_cloudwatch_event_rule.trigger](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_rule) | resource |
+| [aws_cloudwatch_event_target.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_event_target) | resource |
+| [aws_cloudwatch_log_group.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) | resource |
+| [aws_iam_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
+| [aws_iam_role.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_iam_role_policy_attachment.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_lambda_function.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function) | resource |
+| [aws_lambda_permission.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_permission) | resource |
+| [aws_ses_email_identity.target](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ses_email_identity) | resource |
+| [aws_ses_email_identity.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ses_email_identity) | resource |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| cw\_metric\_dimension | n/a | `any` | n/a | yes |
-| cw\_metric\_name | n/a | `any` | n/a | yes |
-| cw\_metric\_namespace | n/a | `any` | n/a | yes |
-| email\_source\_address | n/a | `any` | n/a | yes |
-| email\_target\_address | n/a | `any` | n/a | yes |
-| name | n/a | `any` | n/a | yes |
-| region | n/a | `any` | n/a | yes |
-| lambda\_schedule | n/a | `string` | `"cron(0 0 * * ? *)"` | no |
+| <a name="input_cw_metric_dimension"></a> [cw\_metric\_dimension](#input\_cw\_metric\_dimension) | CloudWatch metric dimension | `string` | n/a | yes |
+| <a name="input_cw_metric_name"></a> [cw\_metric\_name](#input\_cw\_metric\_name) | CloudWatch metric name | `string` | n/a | yes |
+| <a name="input_cw_metric_namespace"></a> [cw\_metric\_namespace](#input\_cw\_metric\_namespace) | CloudWatch metric namespace | `string` | n/a | yes |
+| <a name="input_email_source_address"></a> [email\_source\_address](#input\_email\_source\_address) | n/a | `string` | n/a | yes |
+| <a name="input_email_target_address"></a> [email\_target\_address](#input\_email\_target\_address) | n/a | `string` | n/a | yes |
+| <a name="input_name"></a> [name](#input\_name) | n/a | `string` | n/a | yes |
+| <a name="input_region"></a> [region](#input\_region) | n/a | `string` | n/a | yes |
+| <a name="input_lambda_schedule"></a> [lambda\_schedule](#input\_lambda\_schedule) | n/a | `string` | `"cron(0 0 * * ? *)"` | no |
 
 ## Outputs
 
-No output.
-
+No outputs.
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Contributing and reporting issues
